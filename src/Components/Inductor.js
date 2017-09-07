@@ -2,42 +2,40 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../App.css';
 
-class JsonBro extends Component {
+class Inductor extends Component {
     constructor() {
         super();
         this.state = {
-            clients: []
+            users: []
         }
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8080/gimmeJson').then(results => {
+        axios.get('http://swapi.co/api/people').then(results => {
             this.setState({
-                clients: results.data.results
+                users: results.data.results
             })
         })
     }
 
     render() {
 
-        let Client = function (props) {
+        let User = function (props) {
             return (
                 <div className="user Ticket">
-                    <div>{props.id} : {props.firstName} {props.lastName}</div>
+                    <div>{props.rank + 1} : {props.name}</div>
                 </div>
             )
-        };
-
-
+        }
 
         return (
             <div className="ComponentBody">
                 <div className="ComponentHead">
-                    MySql Spring
+                    External API Inductor
                 </div>
                 <div>
-                    {this.state.clients.map(function (client) {
-                        return <Client guestId={client.id} firstName={client.firstName} lastName={client.lastName}key={client.id} />
+                    {this.state.users.map(function (user, i) {
+                        return <User rank={i} name={user.name} key={user.name} />
                     })}
                 </div>
             </div>
@@ -45,4 +43,4 @@ class JsonBro extends Component {
     }
 }
 
-export default JsonBro;
+export default Inductor;

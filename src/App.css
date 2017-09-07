@@ -1,0 +1,72 @@
+.App {
+  background-color: #e6f9ff;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 40s linear;
+  height: 80px;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App-header {
+  background-color: #222;
+  height: 90px;
+  padding: 20px;
+  color: #ccebff;
+  font-family: "Edwardian Script ITC";
+  font-size: 82px;
+  text-align: center;
+}
+.App-header img{
+  float: right;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.ComponentHead{
+  background-color: #222;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.ComponentBody{
+  background: white;
+  width: 320px;
+  color: darkblue;
+  border: 1px solid darkblue;
+  padding: 5px;
+  margin: 20px;
+  line-height: 200%;
+/*  display:flex;
+  justify-content:space-between; */
+}
+
+.ComponentBody input{
+  display: inline-block;
+  vertical-align: middle;
+  width: 180px;
+}
+
+.ComponentBody label{
+  float: left;
+  text-align: right;
+}
+
+.Ticket{
+  background-color: lightblue;
+  border: solid 1px black;
+  margin: 2px;
+  padding: 3px;
+}
+
+.Inductor{
+  float: right;
+}
