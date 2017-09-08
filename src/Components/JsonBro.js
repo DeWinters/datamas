@@ -12,8 +12,9 @@ class JsonBro extends Component {
 
     componentDidMount() {
         axios.get('http://localhost:8080/gimmeJson').then(results => {
+            console.log()
             this.setState({
-                clients: results.data.results
+                clients: results.data
             })
         })
     }
@@ -37,7 +38,7 @@ class JsonBro extends Component {
                 </div>
                 <div>
                     {this.state.clients.map(function (client) {
-                        return <Client guestId={client.id} firstName={client.firstName} lastName={client.lastName}key={client.id} />
+                        return <Client id={client.id} firstName={client.firstName} lastName={client.lastName}key={client.id} />
                     })}
                 </div>
             </div>
