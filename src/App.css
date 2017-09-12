@@ -67,6 +67,14 @@
   padding: 3px;
 }
 
-.Inductor{
-  float: right;
+.JsonBro{
+}
+
+.Paneled{
+  margin: 10px;
+  border: solid 1px darkblue;
+}
+
+.Cloaked{
+  display: none;
 }

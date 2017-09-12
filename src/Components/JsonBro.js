@@ -12,7 +12,6 @@ class JsonBro extends Component {
 
     componentDidMount() {
         axios.get('http://localhost:8080/gimmeJson').then(results => {
-            console.log()
             this.setState({
                 clients: results.data
             })
@@ -28,8 +27,6 @@ class JsonBro extends Component {
                 </div>
             )
         };
-
-
 
         return (
             <div className="ComponentBody">
