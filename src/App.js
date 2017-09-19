@@ -3,35 +3,44 @@ import './App.css';
 import Icon     from './images/flake.png';
 //import AllTrips from './Components/AllTrips';
 //import AddTrip  from './Components/AddTrip';
-import History  from './Resources/allTrips';
+//import History  from './Resources/allTrips';
 //import Inductor from './Components/Inductor';
 import JsonBro from "./Components/JsonBro";
 import AddGuest from "./Components/AddGuest";
+//import axios from 'axios';
+import DeleteGuest from './Components/DeleteGuest';
+import UpdateGuest from './Components/UpdateGuest';
 
 class App extends Component {
+    /*
     constructor(){
         super();
         this.state ={
-            //allTrips: []
-            allGuests: []
+            //allTrips: [],
+            clients: {}
         }
     }
+    */
 
     componentWillMount() {
-        this.setState({allTrips: History})
+        //this.setState({allTrips: History})
+        //this.setState({allGuests: JsonBro})
     }
-/*
+
+    /*
     handleAddTrip(trip){
         let allTrips = this.state.allTrips;
         allTrips.push(trip);
         this.setState({allTrips:allTrips});
     }
-*/
+    */
 
-    handleSubmit(guest){
-        let allGuests = this.state.allGuests;
-        allGuests.push(guest);
-        this.setState({allGuests:allGuests});
+
+    handleSubmit(){
+        //let allGuests = this.state.allGuests;
+        //allGuests = JsonBro;
+
+        //this.setState({allGuests:allGuests});
     }
 
   render() {
@@ -45,7 +54,15 @@ class App extends Component {
           </div>
 
           <div>
-              <AddGuest addGuest={this.handleSubmit.bind(this)} />
+              <AddGuest onSubmit={this.handleSubmit()} />
+          </div>
+
+          <div>
+              <UpdateGuest />
+          </div>
+
+          <div>
+              <DeleteGuest />
           </div>
 
           <div className="JsonBro">

@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../App.css';
 
 class JsonBro extends Component {
+
     constructor() {
         super();
         this.state = {
@@ -10,6 +11,7 @@ class JsonBro extends Component {
         }
     }
 
+    
     componentDidMount() {
         axios.get('http://localhost:8080/gimmeJson').then(results => {
             this.setState({
