@@ -1,4 +1,7 @@
 .App {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
   background-color: #e6f9ff;
 }
 
@@ -12,6 +15,7 @@
 }
 
 .App-header {
+  grid-column: 1/4;
   background-color: #222;
   height: 90px;
   padding: 20px;
@@ -24,11 +28,55 @@
   float: right;
 }
 
-.App-intro {
-  font-size: large;
+.InvoiceList{
+  grid-column: 2/6;
+  /*align-self: stretch;*/
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1em;
+}
+
+.Ticket{
+ /* align-self: left;*/
+  width: 160px;
+  background-color: lightblue;
+  border: solid 1px black;
+  padding: 3px;
+  font-size: 8pt;
+  line-height: 1;
+}
+.Ticket:hover{
+  font-size: 16pt;
+}
+
+.Creator{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  display: grid;
+  grid-gap: 2px;
+  /*grid-template-columns: 1fr 1fr 1fr 1fr 1fr;*/
+  line-height: 1.5;
+}
+.Creator label{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: right;
+}
+.Creator input{
+  grid-column-start: 3;
+  grid-column-end: 6;
+}
+
+.ComponentBody{
+  background: white;
+  color: darkblue;
+  border: 1px solid darkblue;
+  padding: 5px;
 }
 
 .ComponentHead{
+  grid-column: 1/12;
   background-color: #222;
   color: white;
   font-weight: bold;
@@ -37,38 +85,7 @@
   text-align: center;
 }
 
-.ComponentBody{
-  background: white;
-  width: 320px;
-  color: darkblue;
-  border: 1px solid darkblue;
-  padding: 5px;
-  margin: 20px;
-  line-height: 200%;
-/*  display:flex;
-  justify-content:space-between; */
-}
 
-.ComponentBody input{
-  display: inline-block;
-  vertical-align: middle;
-  width: 180px;
-}
-
-.ComponentBody label{
-  float: left;
-  text-align: right;
-}
-
-.Ticket{
-  background-color: lightblue;
-  border: solid 1px black;
-  margin: 2px;
-  padding: 3px;
-}
-
-.JsonBro{
-}
 
 .Paneled{
   margin: 10px;

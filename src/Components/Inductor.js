@@ -26,7 +26,7 @@ class Inductor extends Component {
                     <div>{props.rank + 1} : {props.name}</div>
                 </div>
             )
-        }
+        };
 
         return (
             <div className="ComponentBody">

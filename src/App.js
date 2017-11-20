@@ -5,26 +5,47 @@ import Icon     from './images/flake.png';
 //import AddTrip  from './Components/AddTrip';
 //import History  from './Resources/allTrips';
 //import Inductor from './Components/Inductor';
+//import axios from 'axios';
+/*
 import JsonBro from "./Components/JsonBro";
 import AddGuest from "./Components/AddGuest";
-//import axios from 'axios';
 import DeleteGuest from './Components/DeleteGuest';
 import UpdateGuest from './Components/UpdateGuest';
+*/
+import InvoiceList from './Components/InvoiceList';
+import InvoiceCreator from './Components/InvoiceCreator';
 
 class App extends Component {
-    /*
+
     constructor(){
         super();
         this.state ={
+            invoices: []
             //allTrips: [],
-            clients: {}
+            //clients: {},
+            //key : 1
         }
     }
-    */
+
 
     componentWillMount() {
+        //this.setState({invoices: InvoiceList})
+        //this.setState({key : Math.random()});
+
+        /*
+        axios.get('http://localhost:8080/gimmeJson').then(results => {
+            this.setState({
+                clients: results.data
+            })
+        })
+        */
         //this.setState({allTrips: History})
         //this.setState({allGuests: JsonBro})
+        //alert(this.state.key);
+    }
+
+    componentWillReceiveProps(){
+        //this.setState({key : this.props.key +1});
     }
 
     /*
@@ -36,12 +57,29 @@ class App extends Component {
     */
 
 
-    handleSubmit(){
+    //handleSubmit(invoice){
+        //let allInvoices = this.state.invoices;
+        //allInvoices.push(invoice);
+        //this.setState({invoices:allInvoices});
+
+        //forceUpdate(JsonBro);
+        //JsonBro.forceUpdate;
+        //JsonBro
+
+        /*
+        let key = this.state.key;
+        key++;
+        this.setState({key:key});
+        */
+
+        //this.componentWillReceiveProps();
+        //this.props.key = Math.random()
+        //this.state.key = Math.random();
+        //this.setState({key : this.props.key +1});
         //let allGuests = this.state.allGuests;
         //allGuests = JsonBro;
-
         //this.setState({allGuests:allGuests});
-    }
+   // }
 
   render() {
 
@@ -50,26 +88,16 @@ class App extends Component {
 
           <div className="App-header">
               <img src={Icon} className="App-logo" alt="logo" />
-              DeWinters
+              MAS
           </div>
 
-          <div>
-              <AddGuest onSubmit={this.handleSubmit()} />
+          <div className="Creator">
+              <InvoiceCreator />
           </div>
 
-          <div>
-              <UpdateGuest />
+          <div className="InvoiceList">
+              <InvoiceList key={this.props.key}/>
           </div>
-
-          <div>
-              <DeleteGuest />
-          </div>
-
-          <div className="JsonBro">
-              <JsonBro />
-          </div>
-
-
 
       </div>
     );
@@ -87,5 +115,23 @@ export default App;
             <!--AddTrip addTrip={this.handleAddTrip.bind(this)} / -->
             <!--AllTrips allTrips={this.state.allTrips} / -->
         </div>
-          */
+
+
+        <div>
+              <AddGuest onSubmit={this.handleSubmit()} />
+          </div>
+
+          <div>
+              <UpdateGuest />
+          </div>
+
+          <div>
+              <DeleteGuest />
+          </div>
+
+          <div className="JsonBro">
+              <JsonBro key={this.props.key}/>
+          </div>
+
+*/
 
